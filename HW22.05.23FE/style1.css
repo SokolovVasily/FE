@@ -1,0 +1,27 @@
+* {
+    margin-top: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h2,table {
+    margin-left: 100px;
+}
+ul {
+    margin-left: 140px;
+}
+
+table ,td,th {
+border: 2px solid black;
+border-collapse: collapse;
+padding: 1px;
+}
+
+
+
+img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
