@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .users_container {
+        width: 30%;
+        background-color: blueviolet;
+        padding: 20px;
+        margin: 20px;
+      }
+      p {
+        font-size: 20px;
+      }
+      section {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+    <main>
+      <div class="numbers"></div>
+      <div class="strings_container"></div>
+      <section></section>
+    </main>
+
+    <script>
+
+
+
+      //1.Написать цикл, который создает множество параграфов с каждым десятым числом
+      // в промежутке от 100 до 50 (т.е. 100, 90, 80, 70, 60, 50).
+      // Добавить созданные параграфы в div с классом numbers
+
+      const divNumbers = document.querySelector(".numbers");
+
+      for (let i = 100; i >= 50; i -= 10) {
+        // console.log(i);
+        divNumbers.innerHTML += "<p> ${i} </p>";
+      }
+
+      //2.Написать цикл, который проходится по массиву строк, для каждой строки создает
+      // параграф и добавляет его в div с классом strings_container. Строки взять произвольные.
+
+      const strings = ["melon", "raspberry", "cucumber"];
+      const stringsContainer = document.querySelector(".strings_container");
+      for (let i = 0; i < strings.length; i++) {
+        console.log(strings[i]);
+        stringsContainer.innerHTML += "<p>${strings[i]}</p>";
+      }
+
+      //.3  Написать цикл, который проходится по массиву с объектами - у объектов свойства
+      //first_name, last_name и  age (данные взять произвольные) - и создает карточки
+      // только для совершеннолетних пользователей.
+      // Карточка должна содержать информацию об имени, фамилии и возрасте пользователя.
+      // Добавить все карточки в div с классом users_container.
+
+      const users = [
+        { first_name: "Karl", last_name: "User1", age: 35 },
+        { first_name: "Pango", last_name: "User2", age: 45 },
+        { first_name: "Oleg", last_name: "User3", age: 25 },
+        { first_name: "Leon", last_name: "User4", age: 55 },
+        { first_name: "Korbin", last_name: "User5", age: 65 },
+      ];
+      const usersSection = document.querySelector("section");
+
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].age >= 18) {
+          console.log(users[i].first_name, users[i].last_name, users[i].age);
+          usersSection.innerHTML += `<div class="users_container">
+                           <p>${users[i].first_name}</p>
+                           <p>${users[i].last_name}</p> 
+                           <p>${users[i].age}</p>
+                           </div>`;
+        }
+      }
+    </script>
+  </body>
+</html>
